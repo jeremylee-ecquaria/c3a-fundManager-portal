@@ -154,17 +154,10 @@ function Claims() {
                             ))}
                         </div>
                     </div>
-                    {/*submission date*/}
                     <div className={branding.filterContainer}>
-                        <div className={branding.filterLabel}>Submission Date: </div>
+                        <div className={branding.filterLabel}>Claim Amount: </div>
                         <div className={branding.filterOptions}>
-                            <span style={{marginRight: "12px"}}>
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
-                            </span>
-                            <span  style={{marginRight: "12px"}}>to</span>
-                            <span>
-                                <DatePicker selected={endDate} onChange={(date) => setEndDate(date)}/>
-                            </span>
+                            From <input type='number' style={{margin: '0 12px'}}/> to <input type='number' style={{margin: '0 12px'}} />
                         </div>
                     </div>
                 </div>

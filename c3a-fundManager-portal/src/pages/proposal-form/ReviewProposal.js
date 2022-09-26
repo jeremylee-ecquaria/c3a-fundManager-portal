@@ -31,7 +31,7 @@ function ReviewProposal(props) {
                         {(submissionState.status === 'rejected' && submissionState.rejection) &&
                             <>
                                 <div style={{marginTop: '12px'}}>
-                                    <span style={{fontWeight: "bold"}}>Remark: </span>
+                                    <span style={{fontWeight: "bold"}}>Reason: </span>
                                     {(proposalRejections.find(x => x.id === submissionState.rejection))?.title || submissionState.rejection}
                                 </div>
                                 <div style={{marginTop: '12px'}}>
@@ -44,7 +44,7 @@ function ReviewProposal(props) {
                         {(submissionState.status === 'pendingClarification' && submissionState.clarification) &&
                             <>
                                 <div style={{marginTop: '12px'}}>
-                                    <span style={{fontWeight: "bold"}}>Remark: </span>
+                                    <span style={{fontWeight: "bold"}}>Reason: </span>
                                     {submissionState.clarification}
                                 </div>
                                 <div style={{marginTop: '12px'}}>
@@ -133,7 +133,7 @@ function ReviewProposal(props) {
                                             <span>Remaining budget: S$ 23000.00</span>
                                         </div>
                                     </div>
-                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Remark:</div>
+                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:</div>
                                     <textarea placeholder={'Text here will be sent to partner.'} style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
 
                                     <button className={branding.success} onClick={() => {
@@ -158,7 +158,7 @@ function ReviewProposal(props) {
                                             name="title"
                                             options={proposalRejections.map(x => ({name: x.title, label: x.title}))}
                                         />
-                                        <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Remark:</div>
+                                        <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:</div>
                                         <textarea placeholder={'Text here will be sent to partner.'} style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
                                     </div>
                                     <button className={branding.alert} onClick={() => {
@@ -173,7 +173,7 @@ function ReviewProposal(props) {
                                     <div className={branding.subheading}>Request Clarification</div>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Remark:</div>
+                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:</div>
                                     <textarea placeholder={'Text here will be sent to partner.'} style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
                                     <button className={branding.info} onClick={() => {
                                         goToSuccessSubmission('You have requested for clarification from the partner.', 'Relevant partner will be notified through email and system notification.')

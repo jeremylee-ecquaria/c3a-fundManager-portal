@@ -5,10 +5,11 @@ import SearchBar from "../components/SearchBar";
 import {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {proposalStatuses as statuses, proposals} from '../data'
+import {proposalStatuses as statuses, proposals, courseCategories, courseTypes, courseFormats } from '../data'
 import { DataGrid } from '@mui/x-data-grid';
 import {useNavigate} from "react-router-dom";
 import StyleStatusChin from "../components/StatusChin";
+import {formatPrice} from "../helpers";
 
 
 function Proposals() {
@@ -69,7 +70,17 @@ function Proposals() {
             renderHeader: () => (
                 <div className={branding.tableColHeader}>Full course fees</div>
             ),
-            renderCell: (params) => (<span className={branding.tableCell}>{params.value}</span>)
+            renderCell: (params) => (<span className={branding.tableCell}>{params.value ? formatPrice(params.value) : ''}</span>)
+        },
+        {
+            field: 'fundingLevel',
+            headerName: 'Funding Level',
+            width: 300,
+            type: 'number',
+            renderHeader: () => (
+                <div className={branding.tableColHeader}>Funding Level</div>
+            ),
+            renderCell: (params) => (<span className={branding.tableCell}>{params.value ? formatPrice(params.value) : ''}</span>)
         },
     ];
 
@@ -155,17 +166,43 @@ function Proposals() {
                             ))}
                         </div>
                     </div>
-                    {/*submission date*/}
                     <div className={branding.filterContainer}>
-                        <div className={branding.filterLabel}>Submission Date: </div>
+                        <div className={branding.filterLabel}>Category: </div>
                         <div className={branding.filterOptions}>
-                            <span style={{marginRight: "12px"}}>
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
-                            </span>
-                            <span  style={{marginRight: "12px"}}>to</span>
-                            <span>
-                                <DatePicker selected={endDate} onChange={(date) => setEndDate(date)}/>
-                            </span>
+                            {courseCategories.map((x) => (
+                                <div className={branding.statusOption} key={x}>
+                                    <input type="checkbox" id={x} name={x}  />
+                                    <label htmlFor={x}> {x}</label>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={branding.filterContainer}>
+                        <div className={branding.filterLabel}>Type: </div>
+                        <div className={branding.filterOptions}>
+                            {courseTypes.map((x) => (
+                                <div className={branding.statusOption} key={x}>
+                                    <input type="checkbox" id={x} name={x}  />
+                                    <label htmlFor={x}> {x}</label>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={branding.filterContainer}>
+                        <div className={branding.filterLabel}>Format: </div>
+                        <div className={branding.filterOptions}>
+                            {courseFormats.map((x) => (
+                                <div className={branding.statusOption} key={x}>
+                                    <input type="checkbox" id={x} name={x}  />
+                                    <label htmlFor={x}> {x}</label>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={branding.filterContainer}>
+                        <div className={branding.filterLabel}>Funding Level: </div>
+                        <div className={branding.filterOptions}>
+                            From <input type='number' style={{margin: '0 12px'}}/> to <input type='number' style={{margin: '0 12px'}} />
                         </div>
                     </div>
                 </div>

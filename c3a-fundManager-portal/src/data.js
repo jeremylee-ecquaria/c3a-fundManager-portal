@@ -255,7 +255,7 @@ export let proposals = [
         partBTotal: 5000.00,
         total: 10000.00,
         fullCoursePerPax: 2000.00,
-
+        fundingLevel: 10000.00,
     },
     {
         title: 'Course D',
@@ -335,6 +335,7 @@ export let proposals = [
         partBTotal: 5000.00,
         total: 10000.00,
         fullCoursePerPax: 2000.00,
+        fundingLevel: 8000.00,
     },
     {
         title: 'Course E',
@@ -1134,6 +1135,7 @@ export const fieldToTitle = {
     othersSection: 'Others (if any)',
     courseSection: 'Course Curriculum Development',
     trainingEqSection: 'Training Equipment (Fixed Assets including hardwares, iPads, laptops, AED, etc.)',
+    fundingLevel: 'Funding Level',
 }
 
 export const proposalStatuses = [
@@ -1379,3 +1381,7 @@ export const claimFieldToTile = {
     invoiceFormNo: 'Invoice/Claim Form No',
     invoiceFormDate: 'Invoice/Claim Form Date',
 };
+
+export const courseCategories = ["Ageing & Life Skills", "Finance & Business", "Health & Wellness", "Humanities", "IT & Science", "Media, Arts & Design"];
+export const courseTypes = ['Bite-Sized Courses', 'Short Courses', 'Exam Free Courses', 'Intergenerational Learning Programme'];
+export const courseFormats = ["F2F only", 'F2F/Online', 'Blended'];
