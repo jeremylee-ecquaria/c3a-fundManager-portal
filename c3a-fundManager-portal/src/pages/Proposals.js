@@ -123,7 +123,7 @@ function Proposals() {
 
     const applyFilter = (searchTerm) => {
         const selectedStatuses = [];
-        let results = [...proposals];
+        let results = [...proposals.filter(x => x.status !== 'draft')];
         statuses.forEach((status) => {
             if (stateStatus[`${status.name}`]) {
                 selectedStatuses.push(status.name)
