@@ -1,0 +1,1086 @@
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+$primary-colour: #7b1fa2;
+$light-primary-colour: rgba(123, 31, 162, 0.6);
+$hyperlink-color: #006fc6;
+$bright-grey-colour: #eeeeee;
+$secondary-grey-colour: #f2f2f2;
+$alert-color: #c62828;
+$info-color: #00579b;
+$pending-color: #7e7e7e;
+$warning-color: orange;
+$success-color: #3b723c;
+$h1-font-size: 42px;
+$h2-font-size: 36px;
+$h3-font-size: 28px;
+$body-font-size: 21px;
+$description-font-size: 18px;
+
+
+.heading {
+  font-size: $h1-font-size;
+}
+
+.subheading {
+  font-size: $h2-font-size;
+}
+
+body {
+  background-color: white;
+  font-size: $body-font-size;
+}
+
+.bodyContainer {
+  padding: 48px 64px 64px 64px;
+
+  &.greyBg {
+    background-color: $bright-grey-colour;
+  }
+}
+
+
+.description {
+  font-size: $description-font-size;
+}
+
+.fontPrimaryColor {
+  color: $primary-colour;
+}
+
+.bgPrimaryColor {
+  background-color: $primary-colour;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.mb36 {
+  margin-bottom: 36px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+.brightGreyBg {
+  background-color: $bright-grey-colour;
+}
+
+input:disabled {
+  cursor: not-allowed;
+  background-color: #d3d3d3;
+}
+
+@media screen and (max-width: 576px) {
+  .heading {
+    font-size: 22px;
+  }
+
+  .subheading {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+
+//-----------------HEADER------------------------
+.header {
+  position: static;
+  width: 100%;
+  padding: 18px 36px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: $primary-colour;
+
+  .companyLogo:hover {
+    cursor: pointer;
+  }
+
+  > div:first-child {
+    flex: 0;
+
+    img {
+      width: 120px;
+    }
+  }
+  >div:nth-child(2) {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .navItem {
+      font-weight: bold;
+      font-size: $h3-font-size;
+      color: $primary-colour;
+      cursor: pointer;
+      padding: 0 28px;
+
+      .activeNav {
+        border-bottom: 4px solid $primary-colour;
+      }
+
+      &:nth-child(2) {
+        border-right: 4px solid lightgray;
+      }
+
+
+      svg {
+        font-size: $h3-font-size;
+      }
+
+      .profileNavItem {
+        display: flex;
+        align-items: center;
+
+        .dropdownItem {
+          font-size: $h3-font-size !important;
+        }
+      }
+    }
+  }
+}
+
+//-----------------MAIN------------------------
+.mainPage {
+  position: relative;
+  display: block;
+
+  .headerContainer {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .bodyCotainer {
+    margin-top: 95px;
+  }
+}
+
+//-----------------HOME------------------------
+.slideshowBg {
+  width: 100%;
+  min-height: 300px;
+  background-color: $primary-colour;
+
+  .slideshowContainer {
+    padding: 48px 0;
+    color: white;
+  }
+
+  .heading {
+    text-align: center;
+    padding-bottom: 48px;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: $h3-font-size;
+    text-align: left;
+  }
+
+  .footer {
+    text-align: right;
+    color: lightgray;
+    font-size: $description-font-size;
+    padding-top: 24px;
+  }
+}
+
+.chartContainer {
+  border-radius: 18px;
+  background-color: white;
+  margin-bottom: 60px;
+  //box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  //box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+  .heading {
+    border-radius: 18px 18px 0 0;
+    color: white;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-font-size;
+    padding: 12px 24px;
+    background-color: #7b1fa2;
+    font-weight: bold;
+  }
+
+  .content {
+    padding: 12px 24px 48px 24px;
+
+    .chart {
+      border: 4px solid black;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
+
+button {
+  border-radius: 12px;
+  padding: 14px 28px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.alert {
+    background-color: $alert-color;
+    color: white;
+    border: 0;
+
+    &.outline {
+      background-color: transparent;
+      color: $alert-color;
+      border: 1px solid $alert-color;
+    }
+  }
+  &.info {
+    background-color: $info-color;
+    color: white;
+    border: 0;
+
+    &.outline {
+      background-color: transparent;
+      color: $info-color;
+      border: 1px solid $info-color;
+    }
+  }
+  &.success {
+    background-color: $primary-colour;
+    color: white;
+    border: 0;
+
+    &.outline {
+      background-color: transparent;
+      color: $primary-colour;
+      border: 1px solid $primary-colour;
+    }
+  }
+  &.stateless {
+    background-color: $pending-color;
+    color: white;
+    border: 0;
+
+    &.outline {
+      background-color: transparent;
+      color: $pending-color;
+      border: 1px solid $pending-color;
+    }
+  }
+}
+
+//-----------------QUICK ACTIONS------------------------
+.qaHeading {
+  color: white;
+  font-size: $h1-font-size;
+  margin-bottom: $h1-font-size;
+  padding: 12px 24px;
+  background-color: #7b1fa2;
+  font-weight: bold;
+}
+
+.qaButtonSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 48px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $primary-colour;
+    font-size: $h3-font-size;
+    color: $primary-colour;
+    border-radius: 12px;
+    padding: $h3-font-size/2 $h3-font-size;
+    margin-right: $h3-font-size;
+    width: 300px;
+    background-color: white;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    svg {
+      color: white;
+      font-size: $h2-font-size;
+      margin-right: 12px;
+    }
+  }
+}
+
+//-----------------Popular Articles------------------------
+.paHeading {
+  color: $primary-colour;
+  font-size: $h1-font-size;
+  margin-bottom: $h1-font-size;
+}
+
+.paListSection {
+
+  .article {
+    font-size: $h3-font-size;
+    margin-bottom: $h3-font-size;
+    cursor: pointer;
+    font-style: italic;
+    color: $hyperlink-color;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: $h3-font-size;
+      color: $hyperlink-color;
+      margin-right: $h3-font-size/2;
+    }
+  }
+}
+
+.exploreLink {
+  font-size: $description-font-size;
+  color: $hyperlink-color;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hyperlink {
+  color: $hyperlink-color;
+  cursor: pointer;
+}
+
+//-----------------Search Bar------------------------
+.searchBarContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    left: 14px;
+    top: 22px;
+    font-size: $h3-font-size;
+  }
+  .searchBar {
+    border: 1px solid #bbbbbb;
+    border-radius: 12px;
+    font-size: $h3-font-size;
+    padding: $h3-font-size/2 $h3-font-size $h3-font-size/2 $h3-font-size+25px;
+    margin-right: 14px;
+    width: 500px;
+  }
+  button {
+    background-color: $primary-colour;
+    font-size: $h3-font-size;
+    color: white;
+    border: 0px;
+    border-radius: 12px;
+    padding: $h3-font-size/2 $h3-font-size;
+    margin-right: $h3-font-size;
+  }
+
+}
+
+//-----------------Proposals------------------------
+.proposalsPage {
+  .heading {
+    color: $primary-colour;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-font-size;
+  }
+  .actionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-colour;
+    font-size: $h2-font-size;
+    color: white;
+    border: 0px;
+    border-radius: 12px;
+    padding: $h2-font-size/2 $h2-font-size;
+    margin-right: $h2-font-size;
+    width: 350px;
+
+    &:hover {
+      background-color: $light-primary-colour;
+    }
+
+    svg {
+      color: white;
+      font-size: $h2-font-size;
+      margin-right: 12px;
+    }
+  }
+
+  .searchSection {
+    margin-bottom: 60px;
+    padding: 48px;
+    border: 6px solid $bright-grey-colour;
+  }
+
+  .filteredByHeading {
+    font-size: $h3-font-size;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .filterContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    font-size: $h3-font-size;
+    margin-bottom: 24px;
+
+    .filterLabel {
+      margin-right: 12px;
+    }
+
+    .filterOptions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      //checkbox
+      .statusOption {
+        margin-right: 24px;
+
+        input {
+          width: 20px;
+          height: 20px;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  .tableContainer {
+    height: 650px;
+
+    .tableColHeader {
+      font-size: 21px !important;
+      font-weight: bold;
+      width: 200px;
+      word-break: break-word;
+      border-bottm: 2px solid black;
+
+    }
+
+    .tableCell {
+      font-size: 24px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.linkToProposalForm {
+  color: $hyperlink-color;
+  cursor: pointer;
+}
+
+.statusChin {
+  display: flex;
+  align-items: center;
+  padding: 5px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  width: fit-content;
+
+  &.bigFont {
+    font-size: $h3-font-size !important;
+  }
+
+  &.alert {
+    border: 1px solid $alert-color;
+    color: $alert-color;
+
+    svg {
+      color: $alert-color;
+    }
+  }
+  &.info {
+    border: 1px solid $info-color;
+    color: $info-color;
+
+    svg {
+      color: $info-color;
+    }
+  }
+  &.success {
+    border: 1px solid $success-color;
+    color: $success-color;
+
+    svg {
+      color: $success-color;
+    }
+  }
+  &.pending {
+    border: 1px solid $pending-color;
+    color: $pending-color;
+
+    svg {
+      color: $pending-color;
+    }
+  }
+
+  svg {
+    margin-right: 9px;
+    font-size: $description-font-size;
+  }
+}
+
+//-----------------New Proposal------------------------
+.newProposalPage {
+  .backLink {
+    cursor: pointer;
+    padding-bottom: $h3-font-size;
+
+    a {
+      font-size: $h3-font-size !important;
+      color: $primary-colour !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.pageBodyContainer {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+
+  .proposalForm {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 48px;
+    position: relative;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+    .stepperContainer {
+      margin-bottom: 48px;
+    }
+
+    .pfbuttonSection {
+      padding-top: 24px;
+      padding-bottom: 72px;
+
+      button {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .sideBox {
+    padding: 48px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 35%;
+    margin-left: 48px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+    .section {
+      //padding-bottom: 48px;
+      margin-bottom: 48px;
+      //border-bottom: 4px solid $bright-grey-colour;
+    }
+
+    .accordion {
+      .subheading {
+        font-size: $h3-font-size;
+        font-weight: bold;
+      }
+
+      //button {
+      //  margin-right: 12px;
+      //  margin-bottom: 12px;
+      //
+      //  &.alert {
+      //    background-color: transparent;
+      //    color: $alert-color;
+      //    border: 1px solid $alert-color;
+      //  }
+      //
+      //  &.info {
+      //    background-color: transparent;
+      //    color: $info-color;
+      //    border: 1px solid $info-color;
+      //  }
+      //  &.success {
+      //    background-color: transparent;
+      //    color: $primary-colour;
+      //    border: 1px solid $primary-colour;
+      //  }
+      //  &.stateless {
+      //    background-color: transparent;
+      //    color: $pending-color;
+      //    border: 1px solid $pending-color;
+      //  }
+      //}
+    }
+
+    .heading {
+      font-size: $h2-font-size;
+      color: white;
+      margin-bottom: 24px;
+      font-weight: bold;
+      background-color: #7b1fa2;
+      padding: 12px 24px;
+    }
+
+    .content {
+      font-size: $h3-font-size;
+      color: $pending-color;
+    }
+
+    .psRow {
+      margin-bottom: 24px;
+
+      img {
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      .psRowTitle {
+        font-size: $h3-font-size;
+        font-weight: bold;
+      }
+      .psRowStar {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+
+
+//-----------------Course Overview------------------------
+.coHeading {
+  font-size: $h2-font-size;
+  color: $primary-colour;
+  margin-bottom: $h2-font-size;
+  font-weight: bold;
+}
+
+.coContent {
+  font-size: $h3-font-size;
+  color: $pending-color;
+}
+
+.coFormGroup {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  margin-bottom: 36px;
+
+  .coFormLabel {
+    font-size: $h3-font-size;
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  .coFromControl {
+    flex-grow: 1;
+
+    input[type=radio] {
+      font-size: $h3-font-size;
+      margin-right: 12px;
+    }
+
+    input[type=text], input[type=number] {
+      border: 1px solid #bbbbbb;
+      border-radius: 12px;
+      padding: $h3-font-size/2 14px $h3-font-size/2 14px;
+      width: 100%;
+    }
+
+    input[type=checkbox] {
+      transform: scale(2);
+    }
+
+    textarea {
+      padding: $h3-font-size/2 14px $h3-font-size/2 14px;
+      border: 1px solid #bbbbbb;
+      border-radius: 12px;
+      width: 100%;
+      height: 200px;
+      font-size: $h3-font-size;
+    }
+
+    .textboxGroup {
+      display: flex;
+      align-items: center;
+
+      .textboxAppend {
+        border-radius: 12px 0 0 12px;
+        border: 1px solid #bbbbbb;
+        background-color: #bbbbbb;
+        text-align: center;
+        padding: $h3-font-size/2 14px $h3-font-size/2 14px;
+
+      }
+
+      input[type=text], input[type=number] {
+        border-radius: 0 12px 12px 0;
+      }
+    }
+
+  }
+}
+
+//-----------------Trainers------------------------
+.tTable {
+  font-size: $h3-font-size;
+
+  th {
+    border-bottom: 2px solid black;
+  }
+  td {
+    height: 100px;
+    font-size: $h3-font-size;
+  }
+
+  .actionLink {
+    color: $hyperlink-color;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 18px;
+  }
+}
+
+//-----------------Cost------------------------
+.costSectionHeading {
+  font-size: $h2-font-size;
+  color: $primary-colour;
+}
+
+.costSectionSubheading {
+  font-size: $h3-font-size;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.costSubSection {
+  margin-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.costSectionTotal {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 36px;
+}
+
+//-----------------Supporting Docs------------------------
+.sdDescriptionSection {
+  font-size: $h3-font-size;
+  margin-bottom: 48px;
+
+  .docTypeTitle {
+    font-weight: bold;
+  }
+  .docTypeTip {
+    font-size: $description-font-size;
+    font-style: italic;
+  }
+
+  .file {
+    display: flex;
+    align-items: center;
+
+    .fileName {
+      margin-right: 18px;
+    }
+  }
+
+  .uploadBtn {
+    font-size: $body-font-size;
+    background-color: $primary-colour;
+    color: white;
+    margin-top: 48px;
+  }
+}
+
+//-----------------Course Summary------------------------
+.courseSummaryPage {
+  .csSectionHeading {
+    font-size: $h2-font-size;
+  }
+
+  .fieldSection {
+    border-bottom: 2px solid $secondary-grey-colour;
+  }
+
+  .fieldSectionTitle {
+    font-size: $h3-font-size;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .fieldGroup {
+
+  }
+  .fieldGroupTitle {
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .fieldRow {
+    width: 100%;
+    display: flex;
+    margin-bottom: $body-font-size;
+    padding: 0 $body-font-size;
+
+    .fieldTitle {
+      font-weight: bold;
+      flex: 1;
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    .fieldValue {
+      flex: 1;
+      text-align: left;
+      padding-left: 10px;
+      color: gray;
+    }
+  }
+}
+
+//-----------------Static Notification------------------------
+.staticNotification {
+  display: flex;
+  padding: 24px 48px;
+  align-items: flex-start;
+  border-radius: 12px;
+  border-width: 2px;
+  margin-bottom: 24px;
+
+  .icon {
+    margin-right: 28px;
+    flex-grow: 0;
+
+    svg {
+      font-size: $h2-font-size;
+    }
+  }
+  .content {
+    flex-grow: 1;
+    font-size: $h3-font-size;
+
+    button {
+      margin-top: 24px;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+  }
+
+  &.alert {
+    border: 2px solid $alert-color;
+
+    .icon {
+      svg {
+        color: $alert-color;
+      }
+    }
+    .content {
+      color: $alert-color;
+
+      button {
+        border: 0px;
+        background-color: $alert-color;
+        color: white;
+      }
+    }
+  }
+  &.warning {
+    border: 2px solid $warning-color;
+
+    .icon {
+      svg {
+        color: $warning-color;
+      }
+    }
+    .content {
+      color: $warning-color;
+
+      button {
+        border: 0px;
+        background-color: $warning-color;
+        color: white;
+      }
+    }
+  }
+
+  &.info {
+    border: 2px solid $info-color;
+
+    .icon {
+      svg {
+        color: $info-color
+      }
+    }
+    .content {
+      color: $info-color;
+
+      button {
+        border: 0px;
+        background-color: $info-color;
+        color: white;
+      }
+    }
+  }
+
+  &.success {
+    border-color: $primary-colour;
+
+    .icon {
+      svg {
+        color: $primary-colour
+      }
+    }
+    .content {
+      color: $primary-colour;
+
+      button {
+        border: 0px;
+        background-color: $primary-colour;
+        color: white;
+      }
+    }
+  }
+}
+
+//-----------------Claims------------------------
+.claimsPage {
+  .heading {
+    color: $primary-colour;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-font-size;
+  }
+  .actionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-colour;
+    font-size: $h2-font-size;
+    color: white;
+    border: 0px;
+    border-radius: 12px;
+    padding: $h2-font-size/2 $h2-font-size;
+    margin-right: $h2-font-size;
+    width: 350px;
+
+    &:hover {
+      background-color: $light-primary-colour;
+    }
+
+    svg {
+      color: white;
+      font-size: $h2-font-size;
+      margin-right: 12px;
+    }
+  }
+
+  .searchSection {
+    margin-bottom: 60px;
+    padding: 48px;
+    border: 6px solid $bright-grey-colour;
+  }
+
+  .filteredByHeading {
+    font-size: $h3-font-size;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .filterContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    font-size: $h3-font-size;
+    margin-bottom: 24px;
+
+    .filterLabel {
+      margin-right: 12px;
+    }
+
+    .filterOptions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      //checkbox
+      .statusOption {
+        margin-right: 24px;
+
+        input {
+          width: 20px;
+          height: 20px;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  .tableContainer {
+    height: 650px;
+
+    .tableColHeader {
+      font-size: 18px !important;
+      font-weight: bold;
+      width: 200px;
+      word-break: break-word;
+    }
+
+    .tableCell {
+      font-size: 24px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.linkToClaimForm {
+  color: $hyperlink-color;
+  cursor: pointer;
+}
+
+//-----------------Successful Submission------------------------
+.ssPage {
+  padding: 48px 24px;
+  border-radius: 12px;
+  background-color: white;
+  .title {
+    font-size: $h2-font-size;
+    color: $success-color;
+    margin-bottom: 24px;
+    svg {
+      font-size: $h2-font-size;
+      color: $success-color;
+    }
+  }
+
+  .description{
+    font-size: $h3-font-size;
+  }
+
+}
+
