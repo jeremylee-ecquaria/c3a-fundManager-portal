@@ -24,6 +24,92 @@ function ReviewProposal(props) {
                 <PoweredBy />
             </div>
             <div className={branding.sideBox}>
+                {['pendingApproval', 'pendingClarification'].includes(submissionState.status) &&
+                    <div className={branding.section}>
+                        <div className={branding.heading}>Actions</div>
+                        <div className={branding.accordion}>
+                            <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon/>}
+                                    aria-controls="panel1a-content">
+                                    <div className={branding.subheading}>Approve</div>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Amount to
+                                        be granted
+                                    </div>
+                                    <div className={branding.coFormGroup}>
+                                        <div className={branding.coFromControl}>
+                                            <PriceTextbox value={0} changeableValue={1}/>
+                                            <span>Remaining budget: S$ 23000.00</span>
+                                        </div>
+                                    </div>
+                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:
+                                    </div>
+                                    <textarea placeholder={'Text here will be sent to partner.'}
+                                              style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
+
+                                    <button className={branding.success} onClick={() => {
+                                        goToSuccessSubmission('You have approved the proposal.', 'Relevant partner will be notified through email and system notification.')
+                                    }}>Approve
+                                    </button>
+                                </AccordionDetails>
+                            </Accordion>
+                            <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon/>}
+                                    aria-controls="panel1a-content">
+                                    <div className={branding.subheading}>Reject</div>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <div>
+                                        <div
+                                            style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason
+                                            of rejection:
+                                        </div>
+                                        <Select
+                                            className="basic-single"
+                                            classNamePrefix="select"
+                                            isClearable={true}
+                                            isSearchable={true}
+                                            name="title"
+                                            options={proposalRejections.map(x => ({name: x.title, label: x.title}))}
+                                        />
+                                        <div style={{
+                                            fontWeight: 'bold',
+                                            marginBottom: '12px',
+                                            marginTop: '24px'
+                                        }}>Reason:
+                                        </div>
+                                        <textarea placeholder={'Text here will be sent to partner.'}
+                                                  style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
+                                    </div>
+                                    <button className={branding.alert} onClick={() => {
+                                        goToSuccessSubmission('You have rejected the proposal.', 'Relevant partner will be notified through email and system notification.')
+                                    }}>Reject
+                                    </button>
+                                </AccordionDetails>
+                            </Accordion>
+                            <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon/>}
+                                    aria-controls="panel1a-content">
+                                    <div className={branding.subheading}>Request Clarification</div>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:
+                                    </div>
+                                    <textarea placeholder={'Text here will be sent to partner.'}
+                                              style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
+                                    <button className={branding.info} onClick={() => {
+                                        goToSuccessSubmission('You have requested for clarification from the partner.', 'Relevant partner will be notified through email and system notification.')
+                                    }}>Request Clarification
+                                    </button>
+                                </AccordionDetails>
+                            </Accordion>
+                        </div>
+                    </div>
+                }
                 <div className={branding.section}>
                     <div className={branding.heading}>Status</div>
                     <div className={branding.content}>
@@ -57,7 +143,7 @@ function ReviewProposal(props) {
                             <>
                                 <div style={{marginTop: '12px'}}>
                                     <span style={{fontWeight: "bold"}}>Total granted subsidy: </span>
-                                    S$ 10000.00
+                                    S$ 10,000.00
                                 </div>
                                 <div style={{marginTop: '12px'}}>
                                     <span style={{fontWeight: "bold"}}>Approval date: </span>
@@ -115,74 +201,6 @@ function ReviewProposal(props) {
                         </div>
                     </div>
                 </div>
-                {['pendingApproval', 'pendingClarification'].includes(submissionState.status) &&
-                    <div className={branding.section}>
-                        <div className={branding.heading}>Actions</div>
-                        <div className={branding.accordion}>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content">
-                                    <div className={branding.subheading}>Approve</div>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Amount to be granted</div>
-                                    <div className={branding.coFormGroup}>
-                                        <div className={branding.coFromControl}>
-                                            <PriceTextbox value={0} changeableValue={1} />
-                                            <span>Remaining budget: S$ 23000.00</span>
-                                        </div>
-                                    </div>
-                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:</div>
-                                    <textarea placeholder={'Text here will be sent to partner.'} style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
-
-                                    <button className={branding.success} onClick={() => {
-                                        goToSuccessSubmission('You have approved the proposal.', 'Relevant partner will be notified through email and system notification.')
-                                    }}>Approve</button>
-                                </AccordionDetails>
-                            </Accordion>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content">
-                                    <div className={branding.subheading}>Reject</div>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <div>
-                                        <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason of rejection:</div>
-                                        <Select
-                                            className="basic-single"
-                                            classNamePrefix="select"
-                                            isClearable={true}
-                                            isSearchable={true}
-                                            name="title"
-                                            options={proposalRejections.map(x => ({name: x.title, label: x.title}))}
-                                        />
-                                        <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:</div>
-                                        <textarea placeholder={'Text here will be sent to partner.'} style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
-                                    </div>
-                                    <button className={branding.alert} onClick={() => {
-                                        goToSuccessSubmission('You have rejected the proposal.', 'Relevant partner will be notified through email and system notification.')
-                                    }}>Reject</button>
-                                </AccordionDetails>
-                            </Accordion>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content">
-                                    <div className={branding.subheading}>Request Clarification</div>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <div style={{fontWeight: 'bold', marginBottom: '12px', marginTop: '24px'}}>Reason:</div>
-                                    <textarea placeholder={'Text here will be sent to partner.'} style={{width: '100%', marginBottom: '24px', height: '150px'}}/>
-                                    <button className={branding.info} onClick={() => {
-                                        goToSuccessSubmission('You have requested for clarification from the partner.', 'Relevant partner will be notified through email and system notification.')
-                                    }}>Request Clarification</button>
-                                </AccordionDetails>
-                            </Accordion>
-                        </div>
-                    </div>
-                }
                 <div style={{marginTop: '24px'}}>
                     <button className={branding.stateless} onClick={() => navigate('/proposals')}>Cancel</button>
                 </div>

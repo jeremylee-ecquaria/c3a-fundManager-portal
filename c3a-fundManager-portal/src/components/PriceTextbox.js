@@ -1,13 +1,13 @@
 import branding from '../css/branding.module.scss';
 import {useState} from "react";
 import {isNumber} from "@mui/x-data-grid/internals";
+import {formatPrice} from "../helpers";
 
 function PriceTextbox(props) {
     let priceText = '0.00';
     if (props.value) {
         if (isNumber(props.value)) {
-            if ((props.value % 1) != 0) priceText = `${props.value}`;
-            else priceText = `${props.value}.00`;
+            priceText = formatPrice(props.value);
         } else priceText = props.value;
     }
 

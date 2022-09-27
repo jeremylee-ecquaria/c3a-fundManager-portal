@@ -118,7 +118,7 @@ function ReviewClaim(props) {
                             <>
                                 <div style={{marginTop: '12px'}}>
                                     <span style={{fontWeight: "bold"}}>Total granted subsidy: </span>
-                                    S$ 10000.00
+                                    S$ 10,000.00
                                 </div>
                                 <div style={{marginTop: '12px'}}>
                                     <span style={{fontWeight: "bold"}}>Approval date: </span>

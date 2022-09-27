@@ -66,7 +66,7 @@ function CourseSummary(props) {
                         </div>
                         <div className={branding.fieldRow}>
                             <div className={branding.fieldTitle}>{fieldToTitle.remark}</div>
-                            <div className={branding.fieldValue}>{answerState.remark}</div>
+                            <div className={branding.fieldValue}>{answerState.remark || '-'}</div>
                         </div>
 
                     </AccordionDetails>
@@ -80,19 +80,19 @@ function CourseSummary(props) {
                     <AccordionDetails>
                         <div className={branding.fieldRow}>
                             <div className={branding.fieldTitle}>{fieldToTitle.objectives}</div>
-                            <div className={branding.fieldValue}>{answerState.objectives}</div>
+                            <div className={branding.fieldValue}>{answerState.objectives || '-'}</div>
                         </div>
                         <div className={branding.fieldRow}>
                             <div className={branding.fieldTitle}>{fieldToTitle.learningOutcomes}</div>
-                            <div className={branding.fieldValue}>{answerState.learningOutcomes}</div>
+                            <div className={branding.fieldValue}>{answerState.learningOutcomes || '-'}</div>
                         </div>
                         <div className={branding.fieldRow}>
                             <div className={branding.fieldTitle}>{fieldToTitle.topicsCovered}</div>
-                            <div className={branding.fieldValue}>{answerState.topicsCovered}</div>
+                            <div className={branding.fieldValue}>{answerState.topicsCovered || '-'}</div>
                         </div>
                         <div className={branding.fieldRow}>
                             <div className={branding.fieldTitle}>{fieldToTitle.trainingDeliveryMethods}</div>
-                            <div className={branding.fieldValue}>{answerState.trainingDeliveryMethods}</div>
+                            <div className={branding.fieldValue}>{answerState.trainingDeliveryMethods || '-'}</div>
                         </div>
 
                     </AccordionDetails>
@@ -110,7 +110,7 @@ function CourseSummary(props) {
                                     <div className={branding.fieldGroupTitle}>{index+1}. {trainer.name}</div>
                                     <div className={branding.fieldRow}>
                                         <div className={branding.fieldTitle}>{fieldToTitle.trainer.profile}</div>
-                                        <div className={branding.fieldValue}>{trainer.profile}</div>
+                                        <div className={branding.fieldValue}>{trainer.profile || '-'}</div>
                                     </div>
                                     <div className={branding.fieldRow}>
                                         <div className={branding.fieldTitle}>{fieldToTitle.trainer.source}</div>

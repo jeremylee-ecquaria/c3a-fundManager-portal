@@ -11,10 +11,13 @@ export function debounce(func, timeout = 300) {
 
 export function formatPrice(number) {
     let priceText = ' S$ 0.00';
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     if (number) {
         if (isNumber(number)) {
-            if ((number % 1) != 0) priceText = `S$ ${number}`;
-            else priceText = `S$ ${number}.00`;
+            if ((number % 1) != 0) priceText = `S$ ${numberWithCommas(number)}`;
+            else priceText = `S$ ${numberWithCommas(number)}.00`;
         } else priceText = number;
     }
     return priceText;
