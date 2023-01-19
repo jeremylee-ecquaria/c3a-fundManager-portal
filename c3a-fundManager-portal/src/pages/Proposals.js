@@ -146,6 +146,9 @@ function Proposals() {
                     All Proposals
                 </div>
                 <div className={branding.searchSection}>
+                    <button>Reprocess Submissions</button>
+                </div>
+                <div className={branding.searchSection}>
                     <div style={{marginBottom: "24px"}}>
                         <SearchBar onSearch={applyFilter}/>
                     </div>
